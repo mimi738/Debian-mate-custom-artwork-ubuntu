@@ -1,0 +1,13 @@
+#!/bin/sh
+
+lb config noauto \
+	--clean \
+	--architectures i386 \
+	--mode debian \
+	--distribution  bullseye \
+	--initramfs live-boot \
+	--debian-installer live \
+	--linux-flavours "686 686-pae" \
+	--linux-packages "linux-image" \
+	--source "false" \
+"${@}"
