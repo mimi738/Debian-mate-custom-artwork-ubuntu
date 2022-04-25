@@ -2,13 +2,11 @@
 task-mate-desktop
 
 #Install printer
-task-print-server
+cups
+system-config-printer
 
 #Install laptop
 task-laptop
 
 #Install desktop app
 vlc
-
-#Install installer launcher
-debian-installer-launcher
