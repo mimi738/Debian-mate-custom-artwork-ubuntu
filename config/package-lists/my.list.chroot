@@ -8,5 +8,23 @@ system-config-printer
 #Install laptop
 task-laptop
 
+#Install mate themes dependencies
+fonts-ubuntu 
+fonts-ubuntu-console
+ayatana-indicator-application 
+ayatana-indicator-power 
+ayatana-indicator-bluetooth 
+ayatana-indicator-printers 
+ayatana-indicator-common 
+ayatana-indicator-session 
+ayatana-indicator-datetime 
+ayatana-indicator-sound 
+ayatana-indicator-messages 
+ayatana-settings 
+ayatana-indicator-notifications 
+ayatana-webmail 
+mate-applets 
+vala-panel-appmenu
+
 #Install desktop app
 vlc
