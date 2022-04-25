@@ -5,9 +5,9 @@ Comment=Debian Yaru-MATE-dark theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Yaru-MATE-dark
-MetacityTheme=Yaru-MATE-dark
-IconTheme=Yaru-MATE-dark
-CursorTheme=Yaru-MATE-dark
+GtkTheme=Yaru-MATE-dark-Debian
+MetacityTheme=Yaru-MATE-dark-Debian
+IconTheme=Yaru-MATE-dark-Debian
+CursorTheme=Yaru-MATE-dark-Debian
 CursorSize=24
 ButtonLayout=:minimize,maximize,close
