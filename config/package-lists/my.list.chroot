@@ -1,1 +1,13 @@
+#Install mate desktop
 task-mate-desktop
+
+#Install printer
+task-print-server
+
+#Install laptop
+task-laptop
+
+#Install desktop app
+vlc
+
+
