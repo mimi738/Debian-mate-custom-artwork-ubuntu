@@ -26,5 +26,13 @@ ayatana-webmail
 mate-applets 
 vala-panel-appmenu
 
+#Install hardware accelerated
+gstreamer1.0-vaapi
+i965-va-driver
+
+#Install wifi driver non-free
+broadcom-sta-dkms
+firmware-iwlwifi
+
 #Install desktop app
 vlc
