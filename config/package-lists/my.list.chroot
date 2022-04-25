@@ -10,4 +10,5 @@ task-laptop
 #Install desktop app
 vlc
 
-
+#Install installer launcher
+debian-installer-launcher

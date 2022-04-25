@@ -1,0 +1,9 @@
+live-boot
+live-config
+live-config-systemd
+
+debian-installer-launcher
+
+#Install Gparted in live session
+
+gparted
