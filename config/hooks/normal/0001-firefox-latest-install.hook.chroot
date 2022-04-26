@@ -4,7 +4,7 @@ set -e
 
 #unstall automatic install of Firefox-esr
 
-apt-get remove --purge firefox-esr 
+#apt-get remove --purge firefox-esr 
 
 
 #download and install firefox
@@ -24,9 +24,10 @@ tar -jxf firefox-*.tar.bz2
 
 cp -rf firefox /opt
 
+rm /usr/bin/firefox
+
 ln -s /opt/firefox/firefox /usr/bin/firefox
 cp /opt/firefox/browser/icons/mozicon128.png /usr/share/pixmaps/firefox.png
-touch /usr/share/applications/firefox.desktop
-echo -e "\n[Desktop Entry]\nName=Mozilla Firefox\nComment=Firefox-Browser\nExec=/usr/bin/firefox\nIcon=firefox\nTerminal=false" > /usr/share/applications/firefox.desktop
-echo -e "Type=Application\nCategories=Network;\nStartupNotify=false;\nName[en_US]=Mozilla Firefox" >> /usr/share/applications/firefox.desktop
+wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop -P /usr/local/share/applications
 
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /opt/firefox/firefox 200 && sudo update-alternatives --set x-www-browser /opt/firefox/firefox 
