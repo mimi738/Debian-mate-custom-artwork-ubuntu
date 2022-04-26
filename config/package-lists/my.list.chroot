@@ -36,4 +36,9 @@ firmware-iwlwifi
 
 #Install desktop app
 vlc
+gnome-software
+thunderbird
+simple-scan
+ntp
+keepassxc
 curl
