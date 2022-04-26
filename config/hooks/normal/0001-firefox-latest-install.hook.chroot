@@ -2,23 +2,9 @@
 
 set -e
 
-#unstall automatic install of Firefox-esr
-
-#apt-get remove --purge firefox-esr 
-
-
 #download and install firefox
 
-arq=$(getconf LONG_BIT)
-
-
-if [ "$arq" == 32 ]
-		then
-			wget ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/latest/linux-i686/en-US/firefox-*.tar.bz2
-		else
-			wget ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/latest/linux-x86_64/en-US/firefox-*.tar.bz2
-		fi ;;
-
+curl -Lo curl -Lo firefox.tar.bz2 'https://download.mozilla.org/?product=firefox-latest&os=linux&lang=en-US'
 
 tar -jxf firefox-*.tar.bz2
 
