@@ -36,4 +36,4 @@ firmware-iwlwifi
 
 #Install desktop app
 vlc
-wget
+curl
