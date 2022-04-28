@@ -1,5 +1,7 @@
 #Install mate desktop
 task-mate-desktop
+debian-installer-launcher
+
 
 #Install printer
 cups
@@ -34,6 +36,7 @@ i965-va-driver
 broadcom-sta-dkms
 firmware-iwlwifi
 
+
 #Install desktop app
 vlc
 gnome-software
@@ -42,3 +45,4 @@ simple-scan
 ntp
 keepassxc
 curl
+chromium
