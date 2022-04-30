@@ -10,7 +10,8 @@ elif [ "$1" = "i386" ]; then
 else
     echo "1. amd64"
     echo "2. i386"
-    read -r -p "Select your system architecture: " answer
+    echo "Select your system architecture: "
+    read -r answer
     case $answer in
         [1]* ) arch="amd64";;
         [2]* ) arch="i386";;
@@ -67,7 +68,8 @@ fi
 
 echo "You are going to build Debian mate live sytem in $arch."
 if [ "$2" != "noquestion" ]; then
-    read -n1 -p "Press [ENTER] to start ...." KEY
+    echo "Press [ENTER] to start ...."
+    read -n1 KEY
     if [[ "$KEY" != "" ]]
     then
         exit 1;
