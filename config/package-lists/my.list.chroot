@@ -1,7 +1,5 @@
 #Install mate desktop
 task-mate-desktop
-debian-installer-launcher
-
 
 #Install printer
 cups

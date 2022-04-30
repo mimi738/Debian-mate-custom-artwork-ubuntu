@@ -5,3 +5,5 @@ live-config-systemd
 #Install Gparted in live session
 
 gparted
+calamares
+calamares-settings-debian
