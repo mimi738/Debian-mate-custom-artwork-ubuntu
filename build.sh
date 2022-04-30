@@ -41,6 +41,7 @@ lb config noauto \
 	--source "false" \
 "${@}"   
 EOF
+    chmod +x auto/config
 
 
 elif [ "$arch" = "i386" ]; then
@@ -62,6 +63,8 @@ lb config noauto \
 	--source "false" \
 "${@}"   
 EOF
+
+    chmod +x auto/config
 
 fi
 
