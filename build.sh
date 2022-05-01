@@ -10,7 +10,7 @@ elif [ "$1" = "i386" ]; then
 else
     echo "1. amd64"
     echo "2. i386"
-    echo "Select your system architecture: "
+    echo -n "Select your system architecture: "
     read -r answer
     case $answer in
         [1]* ) arch="amd64";;
@@ -68,10 +68,26 @@ EOF
 
 fi
 
+#Creat a list of package deleting whith calamares install
+
+mkdir -p config/includes.chroot/etc/calamares/modules/
+    
+cat <<'EOF' >config/includes.chroot/etc/calamares/modules/packages.conf
+backend: apt
+
+operations:
+  - remove:
+EOF
+
+for pkg in $(sed -e '/^[ ]*#/d' -e '/^$/d' config/package-lists/live.list.chroot_live)
+do
+    echo "      -   '$pkg'" >> config/includes.chroot/etc/calamares/modules/packages.conf
+done
+
 
 echo "You are going to build Debian mate live sytem in $arch."
 if [ "$2" != "noquestion" ]; then
-    echo "Press [ENTER] to start ...."
+    echo -n "Press [ENTER] to start ...."
     read -n1 KEY
     if [[ "$KEY" != "" ]]
     then
