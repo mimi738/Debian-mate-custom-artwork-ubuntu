@@ -1,5 +1,6 @@
 #Install mate desktop
 task-mate-desktop
+mate-tweak
 
 #Install printer
 cups
