@@ -38,6 +38,8 @@ i965-va-driver
 broadcom-sta-dkms
 firmware-iwlwifi
 
+#Install libdvd
+libdvd-pkg
 
 #Install desktop app
 pciutils
