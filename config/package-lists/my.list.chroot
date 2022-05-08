@@ -4,6 +4,10 @@ task-mate-desktop
 #Install printer
 cups
 system-config-printer
+foomatic-db-engine
+printer-driver-all
+hp-ppd
+openprinting-ppds
 
 #Install laptop
 task-laptop
@@ -36,6 +40,7 @@ firmware-iwlwifi
 
 
 #Install desktop app
+pciutils
 openssh-client
 vlc
 gnome-software
