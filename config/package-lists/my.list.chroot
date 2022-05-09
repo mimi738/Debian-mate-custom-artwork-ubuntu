@@ -26,8 +26,7 @@ ayatana-indicator-datetime
 ayatana-indicator-sound 
 ayatana-indicator-messages 
 ayatana-settings 
-ayatana-indicator-notifications 
-ayatana-webmail 
+ayatana-indicator-notifications  
 mate-applets 
 vala-panel-appmenu
 
