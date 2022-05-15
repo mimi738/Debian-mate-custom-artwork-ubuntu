@@ -25,6 +25,11 @@ mkdir auto &> /dev/null
 if [ "$arch" = "amd64" ]; then
     sed -i -e "s/linux64/linux/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
     sed -i -e "s/linux/linux64/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
+    
+    sed -i -e "s/linux64/linux/g" config/includes.chroot/usr/sbin/update-firefox
+    sed -i -e "s/linux/linux64/g" config/includes.chroot/usr/sbin/update-firefox
+    
+    
     cat <<'EOF' >auto/config
 #!/bin/sh
 
@@ -46,6 +51,8 @@ EOF
 
 elif [ "$arch" = "i386" ]; then
     sed -i -e "s/linux64/linux/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
+    
+    sed -i -e "s/linux64/linux/g" config/includes.chroot/usr/sbin/update-firefox
 
     cat <<'EOF' >auto/config
 #!/bin/sh
