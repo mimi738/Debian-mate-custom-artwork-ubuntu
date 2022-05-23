@@ -44,6 +44,7 @@ lb config noauto \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--checksums md5 \
 "${@}"   
 EOF
     chmod +x auto/config
@@ -68,6 +69,7 @@ lb config noauto \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--checksums md5 \
 "${@}"   
 EOF
 
