@@ -29,7 +29,7 @@ then
         
         tar -jxf firefox.tar.bz2
         
-        pkexec install-new-firefox
+        pkexec /usr/sbin/install-new-firefox
         if (( $? != 0 ))
         then
             notify-send -i /opt/firefox/icons/updater.png "Install new Firefox failed."
@@ -43,5 +43,7 @@ then
     else
         notify-send -i /opt/firefox/icons/updater.png "A new version of firefox is available !"         
     fi
-
-fi    
+else
+    notify-send -i /opt/firefox/icons/updater.png "Firefox is already up to date."
+fi 
+    
