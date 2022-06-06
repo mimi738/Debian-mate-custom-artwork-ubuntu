@@ -3,6 +3,7 @@ task-mate-desktop
 mate-tweak
 libnotify-bin
 wmshutdown
+usbutils
 
 #Install printer
 cups
