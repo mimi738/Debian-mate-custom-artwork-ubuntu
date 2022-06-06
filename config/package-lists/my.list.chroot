@@ -1,6 +1,8 @@
 #Install mate desktop
 task-mate-desktop
 mate-tweak
+libnotify-bin
+wmshutdown
 
 #Install printer
 cups
@@ -53,3 +55,5 @@ keepassxc
 curl
 chromium
 software-properties-gtk
+
+
