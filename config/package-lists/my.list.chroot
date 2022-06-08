@@ -5,6 +5,10 @@ libnotify-bin
 wmshutdown
 usbutils
 
+
+#grub-pc to fix erreur installation without connection
+grub-pc
+
 #Install printer
 cups
 system-config-printer
