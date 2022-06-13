@@ -63,3 +63,12 @@ chromium
 software-properties-gtk
 elisa
 firefox-esr
+
+#include packages lang
+manpages-* 
+util-linux-locales  
+libreoffice-l10n-* 
+libreoffice-help-* 
+firefox-esr-l10n-all
+thunderbird-l10n-all
+
