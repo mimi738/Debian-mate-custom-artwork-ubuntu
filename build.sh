@@ -23,13 +23,7 @@ fi
 mkdir auto &> /dev/null
 
 if [ "$arch" = "amd64" ]; then
-    sed -i -e "s/linux64/linux/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
-    sed -i -e "s/linux/linux64/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
-    
-    sed -i -e "s/linux64/linux/g" config/includes.chroot/usr/sbin/update-browser
-    sed -i -e "s/linux/linux64/g" config/includes.chroot/usr/sbin/update-browser
-    
-    
+
     cat <<'EOF' >auto/config
 #!/bin/sh
 
@@ -40,7 +34,6 @@ lb config noauto \
 	--distribution  bullseye \
 	--initramfs live-boot \
 	--archive-areas "main contrib non-free" \
-	--debian-installer live \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
@@ -51,9 +44,6 @@ EOF
 
 
 elif [ "$arch" = "i386" ]; then
-    sed -i -e "s/linux64/linux/g" config/hooks/normal/0001-firefox-latest-install.hook.chroot
-    
-    sed -i -e "s/linux64/linux/g" config/includes.chroot/usr/sbin/update-browser
 
     cat <<'EOF' >auto/config
 #!/bin/sh
@@ -65,7 +55,6 @@ lb config noauto \
 	--distribution  bullseye \
 	--initramfs live-boot \
 	--archive-areas "main contrib non-free" \
-	--debian-installer live \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
