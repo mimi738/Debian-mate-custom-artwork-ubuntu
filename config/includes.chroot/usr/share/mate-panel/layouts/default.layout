@@ -26,16 +26,16 @@ menu-path=applications:/
 object-type=applet
 applet-iid=NotificationAreaAppletFactory::NotificationArea
 toplevel-id=top
-position=30
+position=20
 panel-right-stick=true
 locked=true
 
-[Object indicator-applet-complete]
-object-type=applet
+[Object indicator-applet]
 applet-iid=IndicatorAppletCompleteFactory::IndicatorAppletComplete
-toplevel-id=top
-position=20
+object-type=applet
+position=10
 panel-right-stick=true
+toplevel-id=top
 locked=true
 
 [Object show-desktop]
