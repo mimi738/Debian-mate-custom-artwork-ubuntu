@@ -81,6 +81,7 @@ for pkg in $(sed -e '/^[ ]*#/d' -e '/^$/d' config/package-lists/live.list.chroot
 do
     echo "      -   '$pkg'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 done
+echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 
 
 echo "You are going to build Debian mate live sytem in $arch."
