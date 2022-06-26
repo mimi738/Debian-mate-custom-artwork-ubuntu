@@ -13,7 +13,7 @@ label live-@FLAVOUR@-failsafe
 
 	
 MENU begin advanced
-MENU title live-@FLAVOUR@ with Localisation Support
+MENU title live (@FLAVOUR@) with Localisation Support
 LABEL Albanian (sq)
   SAY "Booting Albanian (sq)..."
   linux @LINUX@
