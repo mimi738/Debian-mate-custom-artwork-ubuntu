@@ -1,0 +1,347 @@
+#!/bin/bash
+
+
+source ../config/binary
+
+cp isolinux/splash.png .
+
+i=0
+for kernel in $(ls live/vmlinuz-*);
+do
+    init=$(basename $kernel | sed 's/vmlinuz/initrd.img/g')
+    vm=$(basename $kernel)
+    number=$(basename $kernel | sed 's/vmlinuz-//g')
+    
+    if [ $i == 0 ]
+    then
+    
+cat <<EOF > boot/grub/grub.cfg
+source /boot/grub/config.cfg
+
+
+EOF
+
+    fi
+
+
+cat <<EOF >> boot/grub/grub.cfg
+menuentry "Debian GNU/Linux Live (kernel $number)" {
+  linux  /live/$vm $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+}
+menuentry "Debian GNU/Linux Live (kernel $number) (fail-safe mode)" {
+  linux  /live/$vm $LB_BOOTAPPEND_LIVE_FAILSAFE findiso=\${iso_path}
+  initrd /live/$init
+}
+submenu "Debian Live with Localisation Support" {
+menuentry "Albanian (sq)" {
+  linux  /live/$vm  locales=sq_AL.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Amharic (am)" {
+  linux  /live/$vm locales=am_ET $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Arabic (ar)" {
+  linux  /live/$vm  locales=ar_EG.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Asturian (ast)" {
+  linux  /live/$vm  locales=ast_ES.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Basque (eu)" {
+  linux  /live/$vm  locales=eu_ES.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Belarusian (be)" {
+  linux  /live/$vm  locales=be_BY.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Bangla (bn)" {
+  linux  /live/$vm  locales=bn_BD $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Bosnian (bs)" {
+  linux  /live/$vm  locales=bs_BA.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Bulgarian (bg)" {
+  linux  /live/$vm  locales=bg_BG.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Tibetan (bo)" {
+  linux  /live/$vm  locales=bo_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "C (C)" {
+  linux  /live/$vm  locales=C $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Catalan (ca)" {
+  linux  /live/$vm  locales=ca_ES.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Chinese (Simplified) (zh_CN)" {
+  linux  /live/$vm  locales=zh_CN.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Chinese (Traditional) (zh_TW)" {
+  linux  /live/$vm  locales=zh_TW.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Croatian (hr)" {
+  linux  /live/$vm  locales=hr_HR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Czech (cs)" {
+  linux  /live/$vm  locales=cs_CZ.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Danish (da)" {
+  linux  /live/$vm  locales=da_DK.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Dutch (nl)" {
+  linux  /live/$vm  locales=nl_NL.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Dzongkha (dz)" {
+  linux  /live/$vm  locales=dz_BT $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "English (en)" {
+  linux  /live/$vm  locales=en_US.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Esperanto (eo)" {
+  linux  /live/$vm  locales=eo.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Estonian (et)" {
+  linux  /live/$vm  locales=et_EE.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Finnish (fi)" {
+  linux  /live/$vm  locales=fi_FI.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "French (fr)" {
+  linux  /live/$vm  locales=fr_FR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Galician (gl)" {
+  linux  /live/$vm  locales=gl_ES.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Georgian (ka)" {
+  linux  /live/$vm  locales=ka_GE.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "German (de)" {
+  linux  /live/$vm  locales=de_DE.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Greek (el)" {
+  linux  /live/$vm  locales=el_GR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Gujarati (gu)" {
+  linux  /live/$vm  locales=gu_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Hebrew (he)" {
+  linux  /live/$vm  locales=he_IL.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Hindi (hi)" {
+  linux  /live/$vm  locales=hi_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Hungarian (hu)" {
+  linux  /live/$vm  locales=hu_HU.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Icelandic (is)" {
+  linux  /live/$vm  locales=is_IS.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Indonesian (id)" {
+  linux  /live/$vm  locales=id_ID.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Irish (ga)" {
+  linux  /live/$vm  locales=ga_IE.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Italian (it)" {
+  linux  /live/$vm  locales=it_IT.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Japanese (ja)" {
+  linux  /live/$vm  locales=ja_JP.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Kazakh (kk)" {
+  linux  /live/$vm  locales=kk_KZ.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Khmer (km)" {
+  linux  /live/$vm  locales=km_KH $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Kannada (kn)" {
+  linux  /live/$vm  locales=kn_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Korean (ko)" {
+  linux  /live/$vm  locales=ko_KR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Kurdish (ku)" {
+  linux  /live/$vm  locales=ku_TR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Lao (lo)" {
+  linux  /live/$vm  locales=lo_LA $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Latvian (lv)" {
+  linux  /live/$vm  locales=lv_LV.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Lithuanian (lt)" {
+  linux  /live/$vm  locales=lt_LT.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Malayalam (ml)" {
+  linux  /live/$vm  locales=ml_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Marathi (mr)" {
+  linux  /live/$vm  locales=mr_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Macedonian (mk)" {
+  linux  /live/$vm  locales=mk_MK.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Burmese (my)" {
+  linux  /live/$vm  locales=my_MM $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Nepali (ne)" {
+  linux  /live/$vm  locales=ne_NP $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Northern Sami (se_NO)" {
+  linux  /live/$vm  locales=se_NO $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Norwegian Bokmaal (nb_NO)" {
+  linux  /live/$vm  locales=nb_NO.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Norwegian Nynorsk (nn_NO)" {
+  linux  /live/$vm  locales=nn_NO.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Persian (fa)" {
+  linux  /live/$vm  locales=fa_IR $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Polish (pl)" {
+  linux  /live/$vm  locales=pl_PL.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Portuguese (pt)" {
+  linux  /live/$vm  locales=pt_PT.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Portuguese (Brazil) (pt_BR)" {
+  linux  /live/$vm  locales=pt_BR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Punjabi (Gurmukhi) (pa)" {
+  linux  /live/$vm  locales=pa_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Romanian (ro)" {
+  linux  /live/$vm  locales=ro_RO.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Russian (ru)" {
+  linux  /live/$vm  locales=ru_RU.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Sinhala (si)" {
+  linux  /live/$vm  locales=si_LK $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Serbian (Cyrillic) (sr)" {
+  linux  /live/$vm  locales=sr_RS $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Slovak (sk)" {
+  linux  /live/$vm  locales=sk_SK.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Slovenian (sl)" {
+  linux  /live/$vm  locales=sl_SI.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Spanish (es)" {
+  linux  /live/$vm  locales=es_ES.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Swedish (sv)" {
+  linux  /live/$vm  locales=sv_SE.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Tagalog (tl)" {
+  linux  /live/$vm  locales=tl_PH.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Tamil (ta)" {
+  linux  /live/$vm  locales=ta_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Telugu (te)" {
+  linux  /live/$vm  locales=te_IN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Tajik (tg)" {
+  linux  /live/$vm  locales=tg_TJ.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Thai (th)" {
+  linux  /live/$vm  locales=th_TH.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Turkish (tr)" {
+  linux  /live/$vm  locales=tr_TR.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Uyghur (ug)" {
+  linux  /live/$vm  locales=ug_CN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Ukrainian (uk)" {
+  linux  /live/$vm  locales=uk_UA.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Vietnamese (vi)" {
+  linux  /live/$vm  locales=vi_VN $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+menuentry "Welsh (cy)" {
+  linux  /live/$vm  locales=cy_GB.UTF-8 $LB_BOOTAPPEND_LIVE  findiso=\${iso_path}
+  initrd /live/$init
+}
+}
+EOF
+
+    let "i++"
+done
+
