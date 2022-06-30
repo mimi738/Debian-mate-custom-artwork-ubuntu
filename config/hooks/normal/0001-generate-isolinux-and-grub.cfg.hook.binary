@@ -3,8 +3,6 @@
 
 source ../config/binary
 
-cp isolinux/splash.png .
-
 i=0
 for kernel in $(ls live/vmlinuz-*);
 do
@@ -345,3 +343,5 @@ EOF
     let "i++"
 done
 
+
+exit 0
