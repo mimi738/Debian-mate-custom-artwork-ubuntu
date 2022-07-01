@@ -37,6 +37,8 @@ ayatana-indicator-notifications
 mate-applets 
 vala-panel-appmenu
 deepin-icon-theme
+caja-open-terminal
+
 
 #Install hardware accelerated
 gstreamer1.0-vaapi
