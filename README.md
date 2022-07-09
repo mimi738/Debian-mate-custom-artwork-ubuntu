@@ -1,6 +1,8 @@
 # Introduction
 
-This is a system live debian mate. Included a themes of ubuntu artwork from https://github.com/VentGrey/debian-mate-themes, and add software to work nice for newbie user (vlc, simple-scan, gnome-software, thunderbird and firefox-ESR, chromium). There are non-free drivers for network connection.
+This is a system live debian mate. Included a themes of ubuntu artwork from https://github.com/VentGrey/debian-mate-themes, and add software to work nice for newbie user (vlc, simple-scan, gnome-software, thunderbird and firefox-ESR, chromium, elisa). There are non-free drivers for network connection.
+
+![screenshot](https://ricochets-figeac.fr/iso/capture.png)
 
 This project was born from a fed up with the politics of all snap and flatpack led by canonical. but I wanted a system that was simple for a new linux user.
 
