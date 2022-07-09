@@ -12,6 +12,16 @@ You can download the curent build here:
 - [i386](https://ricochets-figeac.fr/iso/i386/live-image-i386.hybrid.iso)
 - [amd64](https://ricochets-figeac.fr/iso/amd64/live-image-amd64.hybrid.iso)
 
+# Install
+
+To install it easily, download the iso image that corresponds to your hardware architecture (amd64 or i386). And the best thing is to make a bootable USB key to do this I recommend you use [Ventoy](https://www.ventoy.net/en/index.html)  or if you already have a computer with this system installed you can use the program included in it.
+
+![screenshot](https://ricochets-figeac.fr/iso/multiboot.png)
+
+After you can launch your system from this key and install it easily like all live debian systems.
+
+For more information you can look at the [debian documentation](https://www.debian.org/releases/bullseye/installmanual).
+
 # Build
 
 To build this debian live system use docker:
