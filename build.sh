@@ -99,7 +99,7 @@ done
 echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 
 
-echo "You are going to build Debian mate live sytem in $arch."
+echo "You are going to build Debian $desktop live sytem in $arch."
 if [ "$3" != "noquestion" ]; then
     echo -n "Press [ENTER] to start ...."
     read -n1 KEY
@@ -126,9 +126,11 @@ if [ "$desktop" = "gnome" ]; then
     rm -r config/includes.chroot/usr/share/themes
 #del conf desktop mate
     rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
+#del mate packages list
+    rm config/package-lists/mate.list.chroot
    
 elif [ "$desktop" = "mate" ]; then
-
+    rm config/package-lists/gnome.list.chroot
 else
 then
     exit 1;
