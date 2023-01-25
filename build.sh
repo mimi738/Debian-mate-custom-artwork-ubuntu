@@ -29,8 +29,8 @@ else
     echo -n "Select your Desktop : "
     read -r answer
     case $answer in
-        [1]* ) arch="gnome";;
-        [2]* ) arch="mate";;
+        [1]* ) desktop="gnome";;
+        [2]* ) desktop="mate";;
         * ) echo "Not Desktop selected !"; exit 1;;
     esac	
 fi
@@ -131,9 +131,6 @@ if [ "$desktop" = "gnome" ]; then
    
 elif [ "$desktop" = "mate" ]; then
     rm config/package-lists/gnome.list.chroot
-else
-then
-    exit 1;
 fi
 
 #Start Build System
