@@ -19,6 +19,21 @@ else
     esac	
 fi
 
+if [ "$2" = "gnome" ]; then
+	desktop="gnome"
+elif [ "$2" = "mate" ]; then
+	desktop="mate"
+else
+    echo "1. gnome"
+    echo "2. mate"
+    echo -n "Select your Desktop : "
+    read -r answer
+    case $answer in
+        [1]* ) arch="gnome";;
+        [2]* ) arch="mate";;
+        * ) echo "Not Desktop selected !"; exit 1;;
+    esac	
+fi
 
 mkdir auto &> /dev/null
 
@@ -85,13 +100,38 @@ echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/p
 
 
 echo "You are going to build Debian mate live sytem in $arch."
-if [ "$2" != "noquestion" ]; then
+if [ "$3" != "noquestion" ]; then
     echo -n "Press [ENTER] to start ...."
     read -n1 KEY
     if [[ "$KEY" != "" ]]
     then
         exit 1;
     fi
+fi
+
+
+#Configure if is mate or gnome live system
+
+if [ "$desktop" = "gnome" ]; then
+
+#Del include chroot
+    rm -r config/includes.chroot/usr/share/applications
+    rm -r config/includes.chroot/usr/share/backgrounds
+    rm -r config/includes.chroot/usr/share/gtksourceview-2.0
+    rm -r config/includes.chroot/usr/share/gtksourceview-3.0
+    rm -r config/includes.chroot/usr/share/gtksourceview-4
+    rm -r config/includes.chroot/usr/share/icons
+    rm -r config/includes.chroot/usr/share/mate-panel
+    rm -r config/includes.chroot/usr/share/plymouth
+    rm -r config/includes.chroot/usr/share/themes
+#del conf desktop mate
+    rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
+   
+elif [ "$desktop" = "mate" ]; then
+
+else
+then
+    exit 1;
 fi
 
 #Start Build System
