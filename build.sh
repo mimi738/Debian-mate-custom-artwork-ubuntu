@@ -23,17 +23,23 @@ if [ "$2" = "gnome" ]; then
 	desktop="gnome"
 elif [ "$2" = "mate" ]; then
 	desktop="mate"
+elif [ "$2" = "Xfce" ]; then
+	desktop="Xfce"
 else
-    echo "1. gnome"
-    echo "2. mate"
+    echo "1. Gnome"
+    echo "2. Mate"
+    echo "3. Xfce"
     echo -n "Select your Desktop : "
     read -r answer
     case $answer in
         [1]* ) desktop="gnome";;
         [2]* ) desktop="mate";;
+        [3]* ) desktop="xfce";;
         * ) echo "Not Desktop selected !"; exit 1;;
     esac	
 fi
+
+NAME="Debian-live.$desktop-$arch"
 
 mkdir auto &> /dev/null
 
@@ -52,6 +58,8 @@ lb config noauto \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--iso-application "$NAME" \
+    --iso-volume "$NAME" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -73,6 +81,8 @@ lb config noauto \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--iso-application "$NAME" \
+    --iso-volume "$NAME" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -110,7 +120,7 @@ if [ "$3" != "noquestion" ]; then
 fi
 
 
-#Configure if is mate or gnome live system
+#Configure if is mate, xfce or gnome live system
 
 if [ "$desktop" = "gnome" ]; then
 
@@ -128,8 +138,27 @@ if [ "$desktop" = "gnome" ]; then
     rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
 #del mate packages list
     rm config/package-lists/mate.list.chroot
+    rm config/package-lists/xfce.list.chroot
    
 elif [ "$desktop" = "mate" ]; then
+    rm config/package-lists/gnome.list.chroot
+    rm config/package-lists/xfce.list.chroot
+    
+elif [ "$desktop" = "xfce" ]; then
+#Del include chroot
+    rm -r config/includes.chroot/usr/share/applications
+    rm -r config/includes.chroot/usr/share/backgrounds
+    rm -r config/includes.chroot/usr/share/gtksourceview-2.0
+    rm -r config/includes.chroot/usr/share/gtksourceview-3.0
+    rm -r config/includes.chroot/usr/share/gtksourceview-4
+    rm -r config/includes.chroot/usr/share/icons
+    rm -r config/includes.chroot/usr/share/mate-panel
+    rm -r config/includes.chroot/usr/share/plymouth
+    rm -r config/includes.chroot/usr/share/themes
+#del conf desktop mate
+    rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
+#del mate packages list
+    rm config/package-lists/mate.list.chroot
     rm config/package-lists/gnome.list.chroot
 fi
 
