@@ -1,0 +1,3 @@
+#!/bin/sh
+
+apt install --download-only grub-efi-amd64
