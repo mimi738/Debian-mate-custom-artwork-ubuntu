@@ -23,18 +23,18 @@ if [ "$2" = "gnome" ]; then
 	desktop="gnome"
 elif [ "$2" = "mate" ]; then
 	desktop="mate"
-elif [ "$2" = "Xfce" ]; then
-	desktop="Xfce"
+elif [ "$2" = "openbox" ]; then
+	desktop="openbox"
 else
     echo "1. Gnome"
     echo "2. Mate"
-    echo "3. Xfce"
+    echo "3. Openbox"
     echo -n "Select your Desktop : "
     read -r answer
     case $answer in
         [1]* ) desktop="gnome";;
         [2]* ) desktop="mate";;
-        [3]* ) desktop="xfce";;
+        [3]* ) desktop="openbox";;
         * ) echo "Not Desktop selected !"; exit 1;;
     esac	
 fi
@@ -124,30 +124,16 @@ fi
 
 if [ "$desktop" = "gnome" ]; then
 
-#Del include chroot
-    rm -r config/includes.chroot/usr/share/mate-panel
 #del mate packages list
     rm config/package-lists/mate.list.chroot
-    rm config/package-lists/xfce.list.chroot
+    rm config/package-lists/openbox.list.chroot
    
 elif [ "$desktop" = "mate" ]; then
     rm config/package-lists/gnome.list.chroot
-    rm config/package-lists/xfce.list.chroot
+    rm config/package-lists/openbox.list.chroot
     rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
     
-elif [ "$desktop" = "xfce" ]; then
-#Del include chroot
-    rm -r config/includes.chroot/usr/share/applications
-    rm -r config/includes.chroot/usr/share/gtksourceview-2.0
-    rm -r config/includes.chroot/usr/share/gtksourceview-3.0
-    rm -r config/includes.chroot/usr/share/gtksourceview-4
-    rm -r config/includes.chroot/usr/share/icons
-    rm -r config/includes.chroot/usr/share/mate-panel
-    rm -r config/includes.chroot/usr/share/themes
-    rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
-#del conf desktop mate
-    rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
-#del mate packages list
+elif [ "$desktop" = "openbox" ]; then
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/gnome.list.chroot
 fi
