@@ -14,9 +14,8 @@ mkdir -p /etc/dconf/db/local.d
 cat <<EOF | sudo tee  /etc/dconf/db/local.d/00-theme-gtk
 [org/mate/desktop/interface]
 
-# dconf key names and their corresponding values
 gtk-theme='Ambiant-MATE-Debian'
-icon-theme='Papirus'
+icon-theme='ePapirus'
 
 
 [org/mate/caja/desktop]
@@ -26,7 +25,7 @@ font='Ubuntu 11'
 document-font-name=' 11'
 font-name='Ubuntu 11'
 gtk-theme='Ambiant-MATE-Debian'
-icon-theme='Papirus'
+icon-theme='ePapirus'
 monospace-font-name='Ubuntu Mono 13'
 
 [org/mate/marco/general]
@@ -35,16 +34,21 @@ titlebar-font='Ubuntu Medium 11'
 
 [org/gnome/desktop/interface]
 
-# dconf key names and their corresponding values
 gtk-theme='Ambiant-MATE-Debian'
-icon-theme='Papirus'
+icon-theme='ePapirus'
 
 [org/gnome/desktop/interface]
 document-font-name=' 11'
 font-name='Ubuntu 11'
 gtk-theme='Ambiant-MATE-Debian'
-icon-theme='Papirus'
+icon-theme='ePapirus'
 monospace-font-name='Ubuntu Mono 13'
+
+[/org/gnome/shell]
+
+enabled-extensions=['ding@rastersoft.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']
+
+
 EOF
 
 sudo dconf update

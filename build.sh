@@ -126,8 +126,6 @@ if [ "$desktop" = "gnome" ]; then
 
 #Del include chroot
     rm -r config/includes.chroot/usr/share/mate-panel
-#del conf desktop mate
-    rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
 #del mate packages list
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/xfce.list.chroot
