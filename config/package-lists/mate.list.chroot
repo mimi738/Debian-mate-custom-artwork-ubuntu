@@ -3,8 +3,6 @@ task-mate-desktop
 mate-tweak
 
 #Install mate themes dependencies
-fonts-ubuntu 
-fonts-ubuntu-console
 ayatana-indicator-application 
 ayatana-indicator-power 
 ayatana-indicator-bluetooth 
@@ -18,5 +16,4 @@ ayatana-settings
 ayatana-indicator-notifications  
 mate-applets 
 vala-panel-appmenu
-deepin-icon-theme
 caja-open-terminal

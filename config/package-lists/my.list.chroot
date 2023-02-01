@@ -5,6 +5,12 @@ usbutils
 #grub-pc to fix erreur installation without connection
 grub-pc
 
+#common themes
+deepin-icon-theme
+fonts-ubuntu 
+fonts-ubuntu-console
+
+
 #Install printer
 cups
 system-config-printer

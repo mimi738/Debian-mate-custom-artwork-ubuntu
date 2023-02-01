@@ -23,7 +23,7 @@ icon-theme='Papirus'
 font='Ubuntu 11'
 
 [org/mate/desktop/interface]
-dUbuntuocument-font-name=' 11'
+document-font-name=' 11'
 font-name='Ubuntu 11'
 gtk-theme='Ambiant-MATE-Debian'
 icon-theme='Papirus'
@@ -32,6 +32,19 @@ monospace-font-name='Ubuntu Mono 13'
 [org/mate/marco/general]
 theme='Ambiant-MATE-Debian'
 titlebar-font='Ubuntu Medium 11'
+
+[org/gnome/desktop/interface]
+
+# dconf key names and their corresponding values
+gtk-theme='Ambiant-MATE-Debian'
+icon-theme='Papirus'
+
+[org/gnome/desktop/interface]
+document-font-name=' 11'
+font-name='Ubuntu 11'
+gtk-theme='Ambiant-MATE-Debian'
+icon-theme='Papirus'
+monospace-font-name='Ubuntu Mono 13'
 EOF
 
 sudo dconf update
