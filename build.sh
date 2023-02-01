@@ -125,15 +125,7 @@ fi
 if [ "$desktop" = "gnome" ]; then
 
 #Del include chroot
-    rm -r config/includes.chroot/usr/share/applications
-    rm -r config/includes.chroot/usr/share/backgrounds
-    rm -r config/includes.chroot/usr/share/gtksourceview-2.0
-    rm -r config/includes.chroot/usr/share/gtksourceview-3.0
-    rm -r config/includes.chroot/usr/share/gtksourceview-4
-    rm -r config/includes.chroot/usr/share/icons
     rm -r config/includes.chroot/usr/share/mate-panel
-    rm -r config/includes.chroot/usr/share/plymouth
-    rm -r config/includes.chroot/usr/share/themes
 #del conf desktop mate
     rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
 #del mate packages list
@@ -147,13 +139,11 @@ elif [ "$desktop" = "mate" ]; then
 elif [ "$desktop" = "xfce" ]; then
 #Del include chroot
     rm -r config/includes.chroot/usr/share/applications
-    rm -r config/includes.chroot/usr/share/backgrounds
     rm -r config/includes.chroot/usr/share/gtksourceview-2.0
     rm -r config/includes.chroot/usr/share/gtksourceview-3.0
     rm -r config/includes.chroot/usr/share/gtksourceview-4
     rm -r config/includes.chroot/usr/share/icons
     rm -r config/includes.chroot/usr/share/mate-panel
-    rm -r config/includes.chroot/usr/share/plymouth
     rm -r config/includes.chroot/usr/share/themes
 #del conf desktop mate
     rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
