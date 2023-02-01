@@ -135,6 +135,7 @@ if [ "$desktop" = "gnome" ]; then
 elif [ "$desktop" = "mate" ]; then
     rm config/package-lists/gnome.list.chroot
     rm config/package-lists/xfce.list.chroot
+    rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
     
 elif [ "$desktop" = "xfce" ]; then
 #Del include chroot
@@ -145,6 +146,7 @@ elif [ "$desktop" = "xfce" ]; then
     rm -r config/includes.chroot/usr/share/icons
     rm -r config/includes.chroot/usr/share/mate-panel
     rm -r config/includes.chroot/usr/share/themes
+    rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
 #del conf desktop mate
     rm config/hooks/normal/0003-install-dconf-theme-config.hook.chroot
 #del mate packages list
