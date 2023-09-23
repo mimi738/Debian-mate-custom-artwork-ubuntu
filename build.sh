@@ -31,9 +31,9 @@ lb config noauto \
 	--clean \
 	--architectures amd64 \
 	--mode debian \
-	--distribution  bullseye \
+	--distribution  bookworm \
 	--initramfs live-boot \
-	--archive-areas "main contrib non-free" \
+	--archive-areas "main contrib non-free non-free-firmware" \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
@@ -52,9 +52,9 @@ lb config noauto \
 	--clean \
 	--architectures i386 \
 	--mode debian \
-	--distribution  bullseye \
+	--distribution  bookworm \
 	--initramfs live-boot \
-	--archive-areas "main contrib non-free" \
+	--archive-areas "main contrib non-free non-free-firmware" \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
