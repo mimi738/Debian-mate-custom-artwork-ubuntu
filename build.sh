@@ -32,9 +32,9 @@ else
     echo -n "Select your Desktop : "
     read -r answer
     case $answer in
-        [1]* ) desktop="gnome";;
+        [1]* ) desktop="gnome (experimental)";;
         [2]* ) desktop="mate";;
-        [3]* ) desktop="openbox";;
+        [3]* ) desktop="openbox (not work now)";;
         * ) echo "Not Desktop selected !"; exit 1;;
     esac	
 fi
@@ -106,7 +106,6 @@ for pkg in $(sed -e '/^[ ]*#/d' -e '/^$/d' config/package-lists/live.list.chroot
 do
     echo "      -   '$pkg'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 done
-echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 
 
 echo "You are going to build Debian $desktop live sytem in $arch."
@@ -127,15 +126,18 @@ if [ "$desktop" = "gnome" ]; then
 #del mate packages list
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/openbox.list.chroot
+    rm config/packages.chroot/localamares_1_all.deb
    
 elif [ "$desktop" = "mate" ]; then
     rm config/package-lists/gnome.list.chroot
     rm config/package-lists/openbox.list.chroot
     rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
+    echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
     
 elif [ "$desktop" = "openbox" ]; then
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/gnome.list.chroot
+    echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 fi
 
 #Start Build System
