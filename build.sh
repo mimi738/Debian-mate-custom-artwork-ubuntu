@@ -28,13 +28,13 @@ elif [ "$2" = "openbox" ]; then
 else
     echo "1. Gnome"
     echo "2. Mate"
-    echo "3. Openbox"
+    echo "3. Openbox (not working yet)"
     echo -n "Select your Desktop : "
     read -r answer
     case $answer in
-        [1]* ) desktop="gnome (experimental)";;
+        [1]* ) desktop="gnome";;
         [2]* ) desktop="mate";;
-        [3]* ) desktop="openbox (not work now)";;
+        [3]* ) desktop="openbox";;
         * ) echo "Not Desktop selected !"; exit 1;;
     esac	
 fi
