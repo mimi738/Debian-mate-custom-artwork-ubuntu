@@ -1,6 +1,7 @@
 #Install mate desktop
 task-mate-desktop
 mate-tweak
+caja-nextcloud
 
 #Install mate themes dependencies
 ayatana-indicator-application 

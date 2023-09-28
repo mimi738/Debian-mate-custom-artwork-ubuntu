@@ -48,6 +48,8 @@ software-properties-gtk
 elisa
 firefox-esr
 gnome-system-tools
+package-update-indicator
+keepassxc
 
 #include packages lang
 manpages-* 
