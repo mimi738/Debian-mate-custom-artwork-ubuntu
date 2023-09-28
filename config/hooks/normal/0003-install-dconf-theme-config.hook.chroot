@@ -32,6 +32,9 @@ monospace-font-name='Ubuntu Mono 13'
 theme='Ambiant-MATE-Debian'
 titlebar-font='Ubuntu Medium 11'
 
+[org/mate/screensaver]
+lock-enabled=false
+
 [org/gnome/desktop/interface]
 
 gtk-theme='Ambiant-MATE-Debian'
