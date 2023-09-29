@@ -58,8 +58,8 @@ lb config noauto \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
-	--iso-application "$NAME" \
-    --iso-volume "$NAME" \
+	--iso-application "Debian-12-DESKTOP-amd64" \
+    --iso-volume "Debian-12-DESKTOP-amd64" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -81,8 +81,8 @@ lb config noauto \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
-	--iso-application "$NAME" \
-    --iso-volume "$NAME" \
+	--iso-application "Debian-12-DESKTOP-i386" \
+    --iso-volume "Debian-12-DESKTOP-i386" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -123,18 +123,21 @@ fi
 
 if [ "$desktop" = "gnome" ]; then
 
+    sed -i 's/DESKTOP/Gnome/g' auto/config
 #del mate packages list
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/openbox.list.chroot
     rm config/packages.chroot/localamares_1_all.deb
    
 elif [ "$desktop" = "mate" ]; then
+    sed -i 's/DESKTOP/Mate/g' auto/config
     rm config/package-lists/gnome.list.chroot
     rm config/package-lists/openbox.list.chroot
     rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
     echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
     
 elif [ "$desktop" = "openbox" ]; then
+    sed -i 's/DESKTOP/Openbox/g' auto/config
     rm config/package-lists/mate.list.chroot
     rm config/package-lists/gnome.list.chroot
     echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
