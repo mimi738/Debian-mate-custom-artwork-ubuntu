@@ -94,6 +94,10 @@ fi
 #Creat a list of package deleting whith calamares install
 
 mkdir -p config/includes.chroot/etc/calamares/modules/
+
+#Create folder for gnome extensions
+
+mkdir -p config/includes.chroot/usr/share/gnome-shell/extensions/
     
 cat <<'EOF' >config/includes.chroot/etc/calamares/modules/packages.conf
 backend: apt
