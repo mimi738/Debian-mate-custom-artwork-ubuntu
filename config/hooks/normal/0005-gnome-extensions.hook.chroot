@@ -17,7 +17,7 @@ wget https://extensions.gnome.org/extension-data/dingrastersoft.com.v60.shell-ex
 
 unzip https://extensions.gnome.org/extension-data/dingrastersoft.com.v60.shell-extension.zip -d /usr/share/gnome-shell/extensions/ding@rastersoft.com/
 
-rm https://extensions.gnome.org/extension-data/dingrastersoft.com.v60.shell-extension.zip
+rm dingrastersoft.com.v60.shell-extension.zip
 
 
 
