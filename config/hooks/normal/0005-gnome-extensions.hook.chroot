@@ -1,23 +1,17 @@
 #!/bin/bash
 
 
-wget https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v71.shell-extension.zip
+wget https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v84.shell-extension.zip
 
-unzip dash-to-dockmicxgx.gmail.com.v71.shell-extension.zip -d /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
+unzip dash-to-dockmicxgx.gmail.com.v84.shell-extension.zip -d /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
 
-rm dash-to-dockmicxgx.gmail.com.v71.shell-extension.zip
+rm dash-to-dockmicxgx.gmail.com.v84.shell-extension.zip
 
-wget https://extensions.gnome.org/extension-data/alternate-tab@gnome-shell-extensions.gcampax.github.com.v39.shell-extension.zip
+wget https://extensions.gnome.org/extension-data/dingrastersoft.com.v63.shell-extension.zip 
 
-unzip alternate-tab@gnome-shell-extensions.gcampax.github.com.v39.shell-extension.zip -d /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/
+unzip dingrastersoft.com.v63.shell-extension.zip -d /usr/share/gnome-shell/extensions/ding@rastersoft.com/
 
-rm alternate-tab@gnome-shell-extensions.gcampax.github.com.v39.shell-extension.zip
-
-wget https://extensions.gnome.org/extension-data/dingrastersoft.com.v60.shell-extension.zip 
-
-unzip https://extensions.gnome.org/extension-data/dingrastersoft.com.v60.shell-extension.zip -d /usr/share/gnome-shell/extensions/ding@rastersoft.com/
-
-rm dingrastersoft.com.v60.shell-extension.zip
+rm dingrastersoft.com.v63.shell-extension.zip
 
 
 
