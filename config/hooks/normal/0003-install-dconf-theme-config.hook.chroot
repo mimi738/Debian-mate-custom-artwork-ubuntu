@@ -60,7 +60,7 @@ show-home=false
 show-trash=false
 show-volumes=false
 
-[/org/gnome/shell/extensions/dash-to-dock]
+[org/gnome/shell/extensions/dash-to-dock]
 dock-position='LEFT'
 
 EOF
