@@ -12,7 +12,7 @@ This project was born from a fed up with the politics of all snap and flatpack l
 
 You can download the curent build here:
 - [Mate] [i386](https://ricochets-figeac.fr/iso/files/Debian-12-mate-i386.hybrid.iso)
-- [Mate] [amd64](https://ricochets-figeac.fr/iso/files/Debian-12-mate-i386.hybrid.iso)
+- [Mate] [amd64](https://ricochets-figeac.fr/iso/files/Debian-12-mate-amd64.hybrid.iso)
 
 You can download the curent build here:
 - [Gnome] [i386](https://ricochets-figeac.fr/iso/files/Debian-12-gnome-i386.hybrid.iso)
