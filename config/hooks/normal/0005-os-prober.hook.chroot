@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' /etc/default/grub

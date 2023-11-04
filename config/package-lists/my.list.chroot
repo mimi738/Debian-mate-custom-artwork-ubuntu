@@ -1,9 +1,9 @@
 wmshutdown
 usbutils
 
-
-#grub-pc to fix erreur installation without connection
 grub-pc
+grub-efi-ia32-bin
+grub-efi-amd64-bin
 
 #common themes
 deepin-icon-theme
