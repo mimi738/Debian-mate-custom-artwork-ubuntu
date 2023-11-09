@@ -1,10 +1,12 @@
 # Introduction
 
-This is a system live debian. Included a themes of ubuntu artwork from https://github.com/VentGrey/debian-mate-themes, and add software to work nice for newbie user (vlc, simple-scan, gnome-software, thunderbird and firefox-ESR, chromium, elisa). There are non-free drivers for network connection.
+This is a system live debian. Add software to work nice for newbie user (vlc, simple-scan, gnome-software, thunderbird and firefox-ESR, chromium, elisa). There are non-free drivers for network connection.
 
 For this moment there are two system desktop mate and gnome.
 
 ![screenshot](https://ricochets-figeac.fr/iso/capture.png)
+
+![screenshot](https://ricochets-figeac.fr/iso/capture-gnome.png)
 
 This project was born from a fed up with the politics of all snap and flatpack led by canonical. but I wanted a system that was simple for a new linux user.
 
@@ -20,9 +22,11 @@ You can download the curent build here:
 
 # Install
 
-To install it easily, download the iso image that corresponds to your hardware architecture (amd64 or i386). And the best thing is to make a bootable USB key to do this I recommend you use [Ventoy](https://www.ventoy.net/en/index.html)  or if you already have a computer with this system installed you can use the program included in it.
+To install it easily, download the iso image that corresponds to your hardware architecture (amd64 or i386). And the best thing is to make a bootable USB key to do this I recommend you use [Ventoy](https://www.ventoy.net/en/index.html).
 
 ![screenshot](https://ricochets-figeac.fr/iso/multiboot.png)
+
+![screenshot](https://ricochets-figeac.fr/iso/multiboot-gnome.png)
 
 After you can launch your system from this key and install it easily like all live debian systems.
 
