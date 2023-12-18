@@ -1,13 +1,15 @@
-#Install mate desktop
-task-mate-desktop
-mate-tweak
-libnotify-bin
 wmshutdown
 usbutils
 
-
-#grub-pc to fix erreur installation without connection
 grub-pc
+grub-efi-ia32-bin
+grub-efi-amd64-bin
+
+#common themes
+deepin-icon-theme
+fonts-ubuntu 
+fonts-ubuntu-console
+
 
 #Install printer
 cups
@@ -19,26 +21,6 @@ openprinting-ppds
 
 #Install laptop
 task-laptop
-
-#Install mate themes dependencies
-fonts-ubuntu 
-fonts-ubuntu-console
-ayatana-indicator-application 
-ayatana-indicator-power 
-ayatana-indicator-bluetooth 
-ayatana-indicator-printers 
-ayatana-indicator-common 
-ayatana-indicator-session 
-ayatana-indicator-datetime 
-ayatana-indicator-sound 
-ayatana-indicator-messages 
-ayatana-settings 
-ayatana-indicator-notifications  
-mate-applets 
-vala-panel-appmenu
-deepin-icon-theme
-caja-open-terminal
-
 
 #Install hardware accelerated
 gstreamer1.0-vaapi
@@ -66,6 +48,8 @@ software-properties-gtk
 elisa
 firefox-esr
 gnome-system-tools
+package-update-indicator
+keepassxc
 
 #include packages lang
 manpages-* 

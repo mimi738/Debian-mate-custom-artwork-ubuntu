@@ -1,0 +1,20 @@
+#Install mate desktop
+task-mate-desktop
+mate-tweak
+caja-nextcloud
+
+#Install mate themes dependencies
+ayatana-indicator-application 
+ayatana-indicator-power 
+ayatana-indicator-bluetooth 
+ayatana-indicator-printers 
+ayatana-indicator-common 
+ayatana-indicator-session 
+ayatana-indicator-datetime 
+ayatana-indicator-sound 
+ayatana-indicator-messages 
+ayatana-settings 
+ayatana-indicator-notifications  
+mate-applets 
+vala-panel-appmenu
+caja-open-terminal

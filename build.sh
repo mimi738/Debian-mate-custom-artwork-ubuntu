@@ -19,6 +19,27 @@ else
     esac	
 fi
 
+if [ "$2" = "gnome" ]; then
+	desktop="gnome"
+elif [ "$2" = "mate" ]; then
+	desktop="mate"
+elif [ "$2" = "openbox" ]; then
+	desktop="openbox"
+else
+    echo "1. Gnome"
+    echo "2. Mate"
+    echo "3. Openbox (not working yet)"
+    echo -n "Select your Desktop : "
+    read -r answer
+    case $answer in
+        [1]* ) desktop="gnome";;
+        [2]* ) desktop="mate";;
+        [3]* ) desktop="openbox";;
+        * ) echo "Not Desktop selected !"; exit 1;;
+    esac	
+fi
+
+NAME="Debian-live.$desktop-$arch"
 
 mkdir auto &> /dev/null
 
@@ -37,6 +58,8 @@ lb config noauto \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--iso-application "Debian-12-DESKTOP-amd64" \
+    --iso-volume "Debian-12-DESKTOP-amd64" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -58,6 +81,8 @@ lb config noauto \
 	--linux-flavours "686 686-pae" \
 	--linux-packages "linux-image" \
 	--source "false" \
+	--iso-application "Debian-12-DESKTOP-i386" \
+    --iso-volume "Debian-12-DESKTOP-i386" \
 	--checksums md5 \
 "${@}"   
 EOF
@@ -69,6 +94,10 @@ fi
 #Creat a list of package deleting whith calamares install
 
 mkdir -p config/includes.chroot/etc/calamares/modules/
+
+#Create folder for gnome extensions
+
+mkdir -p config/includes.chroot/usr/share/gnome-shell/extensions/
     
 cat <<'EOF' >config/includes.chroot/etc/calamares/modules/packages.conf
 backend: apt
@@ -81,17 +110,41 @@ for pkg in $(sed -e '/^[ ]*#/d' -e '/^$/d' config/package-lists/live.list.chroot
 do
     echo "      -   '$pkg'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 done
-echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 
 
-echo "You are going to build Debian mate live sytem in $arch."
-if [ "$2" != "noquestion" ]; then
+echo "You are going to build Debian $desktop live sytem in $arch."
+if [ "$3" != "noquestion" ]; then
     echo -n "Press [ENTER] to start ...."
     read -n1 KEY
     if [[ "$KEY" != "" ]]
     then
         exit 1;
     fi
+fi
+
+
+#Configure if is mate, xfce or gnome live system
+
+if [ "$desktop" = "gnome" ]; then
+
+    sed -i 's/DESKTOP/Gnome/g' auto/config
+#del mate packages list
+    rm config/package-lists/mate.list.chroot
+    rm config/package-lists/openbox.list.chroot
+    rm config/packages.chroot/localamares_1_all.deb
+   
+elif [ "$desktop" = "mate" ]; then
+    sed -i 's/DESKTOP/Mate/g' auto/config
+    rm config/package-lists/gnome.list.chroot
+    rm config/package-lists/openbox.list.chroot
+    rm config/includes.chroot/usr/share/firefox-esr/distribution/extensions/chrome-gnome-shell@gnome.org.xpi
+    echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
+    
+elif [ "$desktop" = "openbox" ]; then
+    sed -i 's/DESKTOP/Openbox/g' auto/config
+    rm config/package-lists/mate.list.chroot
+    rm config/package-lists/gnome.list.chroot
+    echo "      -   'localamares'" >> config/includes.chroot/etc/calamares/modules/packages.conf
 fi
 
 #Start Build System
