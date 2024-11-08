@@ -36,7 +36,6 @@ libdvd-pkg
 #Install desktop app
 pciutils
 openssh-client
-openssh-server
 vlc
 gnome-software
 thunderbird
